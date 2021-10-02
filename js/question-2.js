@@ -14,15 +14,31 @@ async function getApi(){
     // console.log();
 
     for(let i = 0; i < games.length; i++){
-        console.log(games[i].tags);
+        
+
+        const tags = games[i].tags;
+
+        var count = 0;
+        
+        for(let i = 0; i < tags.length; i++){
+            
+            count = count+1;
+            
+             
+        }
+        console.log(count)
+  
+        
 
         if(i === 8) {
             break;
         }
+
         
-        resultContainer.innerHTML+= `<div class="result">Name:${games[i].name} | Rating: ${games[i].rating} </div>`; 
+        resultContainer.innerHTML+= `<div class="result">Name:${games[i].name} | Rating: ${games[i].rating} tags: ${count} </div>`; 
     }
-console.log(games);
+   
+// console.log(games);
 
 }
 
