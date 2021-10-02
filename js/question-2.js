@@ -11,7 +11,7 @@ async function getApi(){
 
     resultContainer.innerHTML = "";
 
-    // console.log();
+
 
     for(let i = 0; i < games.length; i++){
         
@@ -24,9 +24,8 @@ async function getApi(){
             
             count = count+1;
             
-             
         }
-        console.log(count)
+        // console.log(count)
   
         
 
@@ -43,3 +42,13 @@ async function getApi(){
 }
 
 getApi();
+
+
+try {
+    getApi();
+    console.log("success");
+}
+catch(error) {
+    console.log("error occured", error);
+    resultContainer.innerHTML = "This didnt go as planned";
+}
