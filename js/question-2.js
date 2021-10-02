@@ -3,22 +3,24 @@ const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=
 const resultContainer = document.querySelector(".result");
 
 async function getApi(){
-    //fetch
+// checking for errors with try
+    try {
+        //connecting to API
+        const response = await fetch (url);
 
-    const response = await fetch (url);
-    const result = await response.json();
-    const games = result.results;
+        const result = await response.json();
+
+        const games = result.results;
 
     resultContainer.innerHTML = "";
 
 
-
     for(let i = 0; i < games.length; i++){
         
-
+//counting number of tags
         const tags = games[i].tags;
 
-        var count = 0;
+        let count = 0;
 
         for(let i = 0; i < tags.length; i++){
             
@@ -28,22 +30,26 @@ async function getApi(){
         // console.log(count)
   
         
-
+//stopping the loop at 8
         if(i === 8) {
             break;
         }
 
-        
+//deploying the info        
         resultContainer.innerHTML+= `<div class="result"> ${games[i].name} | Rating: ${games[i].rating} tags: ${count} </div>`; 
     }
    
-// console.log(games);
+// catching error 
+    }   catch (error) {
+        console.log("error occured", error);
+        resultContainer.innerHTML = "This didnt go as planned";
+    }
 
 }
 
 getApi();
 
-
+//catching other error
 try {
     getApi();
     console.log("success");
