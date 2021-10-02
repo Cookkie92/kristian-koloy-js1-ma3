@@ -15,8 +15,12 @@ async function getApi(){
 
     for(let i = 0; i < games.length; i++){
         console.log(games[i].tags);
+
+        if(i === 8) {
+            break;
+        }
         
-        resultContainer.innerHTML+= `<div class="result">${games[i].name} Rating: ${games[i].rating} </div>`; 
+        resultContainer.innerHTML+= `<div class="result">Name:${games[i].name} | Rating: ${games[i].rating} </div>`; 
     }
 console.log(games);
 
