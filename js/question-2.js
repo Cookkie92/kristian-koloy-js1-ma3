@@ -19,7 +19,7 @@ async function getApi(){
         const tags = games[i].tags;
 
         var count = 0;
-        
+
         for(let i = 0; i < tags.length; i++){
             
             count = count+1;
@@ -35,7 +35,7 @@ async function getApi(){
         }
 
         
-        resultContainer.innerHTML+= `<div class="result">Name:${games[i].name} | Rating: ${games[i].rating} tags: ${count} </div>`; 
+        resultContainer.innerHTML+= `<div class="result"> ${games[i].name} | Rating: ${games[i].rating} tags: ${count} </div>`; 
     }
    
 // console.log(games);
