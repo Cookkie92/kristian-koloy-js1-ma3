@@ -10,7 +10,7 @@ async function getApi() {
     const response = await fetch(url);
 
     const result = await response.json();
-    console.log(response);
+    console.log(result);
     //finding the info
     const games = result.results;
     //displaying loader
